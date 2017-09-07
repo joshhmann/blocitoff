@@ -31,3 +31,4 @@
  #bootstrap
  gem 'autoprefixer-rails'
  gem 'bootstrap-sass'
+ gem 'bcrypt'
