@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-  before_action :require_sign_in
   
   def create
     @item = Item.new
@@ -9,7 +8,7 @@ class ItemsController < ApplicationController
     if @item.save
       
       flash[:notice] = "Item was saved successfully."
-      redirect_to @user
+      redirect_to (current_user)
     else
       flash.now[:alert] = "There was an error saving the post. Please try again."
       render :create
