@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new
     @item.name = params[:item][:name]
-    @item.user = params[:item][:user]
+    @item.user = current_user
     
     if @item.save
       

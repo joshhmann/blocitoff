@@ -18,8 +18,8 @@
    </div>
  </div>
  <% if current_user %>
-  <%= render 'items/form', item: Item.new, user: @user %>
+  <%= render 'items/form', item: Item.new %>
  <% end %>
  <h2>Items</h2>
- <% render @user.items%>
+ <%= render @user.items%>
  

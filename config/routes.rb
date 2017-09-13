@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   get 'users/new'
   devise_for :users
-  resources :users
+  resources :users, only: [:show]
   get 'about' => 'welcome#about'
-  root 'welcome#index'
+  root 'user#show'
   resources :items, only: [:create]
 
   
