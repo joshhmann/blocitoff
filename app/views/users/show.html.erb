@@ -11,13 +11,7 @@
        <div class="media-body">
          <h2 class="media-heading"><%= @user.email %></h2>
          <small>
-          <%= pluralize(@user.items.count, 'item') %>
-         </small>
-       </div>
-     </div>
-   </div>
- </div>
- <% if current_user %>
+<% if current_user %>
   <%= render 'items/form', item: Item.new %>
  <% end %>
  <h2>Items</h2>
