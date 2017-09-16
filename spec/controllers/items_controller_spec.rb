@@ -2,26 +2,16 @@ require 'rails_helper'
 
 RSpec.describe ItemsController, type: :controller do
 
-  describe "GET #index" do
-    it "returns http success" do
-      get :index
-      expect(response).to have_http_status(:success)
-    end
-  end
+  let(:my_item) { Item.create!(name: "Hello", user: "test@bloc.com") }
 
-  describe "GET #show" do
+  describe "POST #create" do
     it "returns http success" do
-      get :show
       expect(response).to have_http_status(:success)
     end
+  it "creates a new item"
+  
   end
-
-  describe "GET #new" do
-    it "returns http success" do
-      get :new
-      expect(response).to have_http_status(:success)
-    end
-  end
+  
 
   describe "GET #edit" do
     it "returns http success" do
@@ -29,5 +19,4 @@ RSpec.describe ItemsController, type: :controller do
       expect(response).to have_http_status(:success)
     end
   end
-
 end
