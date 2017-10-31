@@ -2,7 +2,9 @@ require 'rails_helper'
 
 RSpec.describe ItemsController, type: :controller do
 
-  let(:item) { Item.create!(name: "Hello", user: "test@bloc.com") }
+  let(:my_item) { create(:item) }
+  let(:my_user) { create(:user) }
+  let(:my_post) { create(:post, name: my_name) }
   
   describe "POST create" do
     it "returns http redirect" do
@@ -10,9 +12,18 @@ RSpec.describe ItemsController, type: :controller do
     end
     
     it "increases the number of Post by 1" do 
-      expect { post :create, current_user, post { name:  
+      expect{ post :create, current_user, post: { name: Faker::RickAndMorty.quote } }.to change(Item,:count).by(1)
     end
-      
+    
+    it "assigns the new post to @post" do
+      post :create, current_user, post: {name: Faker::RickAndMorty.quote}
+      expect(assigns(:post)).to eq Post.last
+    end
+    
+    it "redirects to the new post" do
+      post :create, current_user, post: {name: Faker::RickAndMorty.quote}
+      expect(response).to redirect_to [my_topic, Post.last]
+    end
   end 
 end
 
