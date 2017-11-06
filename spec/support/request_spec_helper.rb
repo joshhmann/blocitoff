@@ -20,6 +20,4 @@ module RequestSpecHelper
   def warden_scope(resource)
     resource.class.name.underscore.to_sym
   end
-  
-  
 end

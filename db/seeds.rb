@@ -11,8 +11,7 @@ require 'faker'
 5.times do
   User.create!(
     email: Faker::Internet.email,
-    password: Faker::Internet.password,
-    name: Faker::RickAndMorty.character
+    password: Faker::Internet.password
     )
 end
 
