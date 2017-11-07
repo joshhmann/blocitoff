@@ -13,6 +13,19 @@ require 'faker'
     email: Faker::Internet.email,
     password: Faker::Internet.password
     )
+    
+users = User.all
+    
+2.times do
+  Item.create!(
+    user: users.sample,
+    name: Faker::Internet.email
+    )
+  end
 end
+
+puts "Seed Finished!"
+puts "#{User.count} users created!"
+puts "#{Item.count} items created!"
 
   
