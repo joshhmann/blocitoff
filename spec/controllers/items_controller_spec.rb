@@ -1,10 +1,9 @@
 require 'rails_helper'
-
+require 'faker'
 RSpec.describe ItemsController, type: :controller do
-
-  let(:my_item) { create(:item, current_user) }
-  let(:my_user) { create(:user, sign_in) }
-  let(:my_post) { create(:post, name: my_name) }
+  let(:my_user) { create(:user) }
+  let(:my_item) { create(:item, user: my_user) }
+  let(:name) { create(Faker::RickAndMorty::name) }
   
   describe "POST create" do
     it "returns http redirect" do
