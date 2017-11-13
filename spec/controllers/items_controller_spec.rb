@@ -12,9 +12,6 @@ RSpec.describe ItemsController, type: :controller do
   end
   
   describe "POST create" do
-    it "returns http redirect" do
-      expect(response).to redirect_to root_path
-    end
     
     it "increases the number of Post by 1" do 
       expect{ post :create, user_id: @user.id, item: { name: name } }.to change(Item, :count).by(1)
@@ -27,7 +24,7 @@ RSpec.describe ItemsController, type: :controller do
     
     it "redirects to the new post" do
       post :create, user_id: @user.id, item: { name: name }
-      expect(response).to redirect_to root_path
+      expect(response).to redirect_to my_user
     end
   end
 end
