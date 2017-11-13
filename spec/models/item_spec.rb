@@ -1,9 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Item, type: :model do
-  let(:name) { create(Faker::RickAndMorty.character) }
+  let(:name) { create(:name) }
   let(:user) { create(:user) }
-  let(:item) { create(:item, user: user) }
+  let(:item) { create(:item, name: name,  user: user) }
+  
+  
   it { is_expected.to belong_to(:user) }
   it { is_expected.to validate_presence_of(:name) }
   it { is_expected.to validate_presence_of(:user) }
@@ -11,7 +13,7 @@ RSpec.describe Item, type: :model do
   
   describe "attributes" do
     it "has a name attribute" do
-      expect(item).to have_atttributes(name: item.name, user: user)
+      expect(item).to have_atttributes(name: name, user: user)
     end
   end
   

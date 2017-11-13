@@ -16,10 +16,10 @@ require 'faker'
     
 users = User.all
     
-2.times do
+5.times do
   Item.create!(
     user: users.sample,
-    name: Faker::Internet.email
+    name: Faker::Overwatch.quote
     )
   end
 end
