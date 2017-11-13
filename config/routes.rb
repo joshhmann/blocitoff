@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
   get 'users/new'
   devise_for :users
-  authenticated do
-    root to: "secret#index", as: :authenticated_root
-  end
   resources :users, only: [:show]
   root 'users#show'
   resources :items, only: [:create]

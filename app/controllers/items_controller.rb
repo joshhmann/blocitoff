@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
     if @item.save
       
       flash[:notice] = "Item was saved successfully."
-      redirect_to (user_session)
+      redirect_to (current_user)
     else
       flash.now[:alert] = "There was an error saving the post. Please try again."
       render :new
