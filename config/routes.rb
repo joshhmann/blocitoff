@@ -5,7 +5,6 @@ Rails.application.routes.draw do
     root to: "secret#index", as: :authenticated_root
   end
   resources :users, only: [:show]
-  get 'about' => 'welcome#about'
   root 'users#show'
   resources :items, only: [:create]
 
