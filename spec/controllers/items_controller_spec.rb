@@ -35,7 +35,7 @@ RSpec.describe ItemsController, type: :controller do
       expect(count).to eq 0
     end
     
-    it "redirects to user index" do
+    it "returns http success" do
       delete :destroy, format: :js, item_id: my_item.id
       expect(response).to have_http_status(:success)
     end

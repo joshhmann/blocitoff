@@ -1,7 +1,7 @@
 <div class="media">
   <div class="media-body">
     <ul>
-      <li><%= item.name %> <%= link_to "", item, method: :delete, class: 'glyphicon glyphicon-ok' %></li>
+      <li><%= item.name %> <%= link_to "", item, method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %></li>
       </ul>
   </div>
 </div>
