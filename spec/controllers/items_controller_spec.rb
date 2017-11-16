@@ -30,13 +30,13 @@ RSpec.describe ItemsController, type: :controller do
   
   describe "DELETE destroy" do
     it "deletes the item" do
-      delete :destroy, format: :js, item_id: my_item.id
+      delete :destroy, format: :js, id: my_item.id
       count = Item.where({id: my_item.id}).size
       expect(count).to eq 0
     end
     
     it "returns http success" do
-      delete :destroy, format: :js, item_id: my_item.id
+      delete :destroy, format: :js, id: my_item.id
       expect(response).to have_http_status(:success)
     end
   end
