@@ -1,5 +1,8 @@
 <div class="media-body" id="item-<%=item.id%>">
     <ul>
-      <li><%= item.name %> <%= link_to "", item, method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %></li>
-      </ul>
+      <li><%= item.name %> 
+      <%= link_to "", item, method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %></li>
+      <%= distance_of_time_in_words(Time.now, item.created_at + 7.days) %> left!
+       </ul>
+      
   </div>
