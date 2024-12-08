@@ -1,7 +1,7 @@
  source 'https://rubygems.org'
  
  # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
- gem 'rails', '4.2.5'
+ gem 'rails', '7.0.0'
  gem 'devise'
  group :production do
    gem 'pg'
@@ -22,7 +22,7 @@
  
  # Use SCSS for stylesheets
  #bootstrap
- gem 'sass-rails', '~> 5.0'
+ gem 'sass-rails', '~> 6.0', '>= 6.0.0'
  # Use Uglifier as compressor for JavaScript assets
  gem 'uglifier', '>= 1.3.0'
  # Use CoffeeScript for .coffee assets and views
