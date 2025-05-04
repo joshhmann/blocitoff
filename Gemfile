@@ -13,7 +13,7 @@
  end
  
  group :development, :test do
-  gem 'rspec-rails', '~> 3.0'
+  gem 'rspec-rails', '~> 8.0', '>= 8.0.0'
   gem 'shoulda-matchers', '~> 2.8'
   gem "nyan-cat-formatter"
   gem 'factory_girl_rails', '~> 4.0'
